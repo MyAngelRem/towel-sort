@@ -1,6 +1,12 @@
+module.exports = function towelSort(matrix) {
 
-// You should implement your task here.
+  if (!matrix || matrix.length === 0) return [];
 
-module.exports = function towelSort (matrix) {
-  return [];
+  const newMatrix = matrix.reduce((acc, cur, index) => {
+    if (index % 2) cur.reverse();
+
+    return [...acc, ...cur];
+  }, []);
+
+  return newMatrix;
 }
